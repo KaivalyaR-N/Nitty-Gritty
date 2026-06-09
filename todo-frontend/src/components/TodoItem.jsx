@@ -31,6 +31,7 @@ export default function TodoItem({ todo, onToggle, onDelete }) {
         className="todo-checkbox"
         checked={todo.completed}
         onChange={handleToggle}
+        aria-label={`Mark ${todo.title} as completed`}
       />
 
       <span className="todo-title">{todo.title}</span>
@@ -38,13 +39,10 @@ export default function TodoItem({ todo, onToggle, onDelete }) {
       <span className={`priority-tag priority-${todo.priority}`}>
         {todo.priority}
       </span>
-
-      <button
-        className="btn btn-danger btn-small"
-        onClick={handleDelete}
-      >
-        ✕
+      <button  className="btn btn-danger btn-small"  onClick={handleDelete}  aria-label={`Delete ${todo.title}`}  title="Delete task">
+         ✕
       </button>
+    
 
     </div>
   )
